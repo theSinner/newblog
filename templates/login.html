@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ورود</title>
+    
+    <link rel="stylesheet" type="text/css" href="/static/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/foundation.min.css" /> 
+    <link rel="stylesheet" type="text/css" href="/static/css/login.css" />
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <script type='text/javascript' src="/static/js/jquery.min.js"></script>
+    <script type='text/javascript' src="/static/js/login.js"></script>
+
+
+  </head>
+
+  <body >
+    <div class="row" style="padding-top:10em;">
+      <div class="columns large-4 large-offset-4 end loginPlate">
+          {{ state }}
+        <form action="/login/" method="post">
+        {% csrf_token %}
+        <div class="row" style="margin-top:2em;">
+          <div class="columns small-8 small-offset-1">
+            <input name="username" type="text" class="textField" placeholder="username">
+          </div>
+          <div class="columns small-3 end">
+            <p style="font-size:1.3em;font-family:bmitra;text-align:right;margin-top:0.1em;" dir="rtl">
+            نام کاربری:
+            </p>
+          </div>
+        </div>
+        <div class="row" style="margin-top:0.5em;">
+          <div class="columns small-8 small-offset-1">
+            <input name="password" type="password" class="textField"  placeholder="password">
+          </div>
+          <div class="columns small-3 end">
+            <p style="font-size:1.3em;font-family:bmitra;text-align:right;margin-top:0.1em;" dir="rtl">
+            گذرواژه:
+            </p>
+          </div>
+        </div>
+        <div class="row" style="margin-top:0.5em;margin-bottom:1em;">
+          <div class="columns small-11 small-offset-1">
+            <input type="submit" value="ورود" class="button" style="width:100%;padding:10px;font-size:1.6em;font-family:bmitra;"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </form>
+  </body>
+
+
+</html>
+

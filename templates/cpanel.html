@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>مدیریت اخبار</title>
+    
+    <link rel="stylesheet" type="text/css" href="/static/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/foundation.min.css" /> 
+    <link rel="stylesheet" type="text/css" href="/static/css/panel.css" />
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <script type='text/javascript' src="/static/js/jquery.min.js"></script>
+    <script type='text/javascript' src="/static/js/foundation.min.js"></script>
+    <script type='text/javascript' src="/static/js/foundation/foundation.reveal.js"></script>
+    <script type='text/javascript' src="/static/js/angular.min.js"></script>
+    <script type='text/javascript' src="/static/js/controller.js"></script>
+    <script type='text/javascript' src="/static/js/panel.js"></script>
+
+
+  </head>
+
+  <body ng-app="panelApp">
+    <nav class="top-bar" data-topbar>
+
+      <section class="top-bar-section">     
+          <ul class="left">
+              <li>
+                <a href='/logout/' class="button alert" style="height:45px;top:0px;margin:0px;font-family:bmitra;font-size:1.3em;padding-left:20px;padding-right:20px;padding-top:0.5em;">خروج</a>
+              </li>
+          </ul>
+          <ul class="right">
+              <li>
+                <a href='/addnews/' target="_blank" id="addNewsButton" class="button active" style="height:45px;top:0px;margin:0px;font-family:bmitra;font-size:1.3em;padding-left:20px;padding-right:20px;padding-top:0.5em;">افزودن خبر جدید</a>
+              </li>
+          </ul>
+      </section>
+    </nav>
+    <div class="row" >
+      <div id="prevNewsPlate" ng-controller="NewsPlateCtrl" class="columns large-10 large-offset-1">
+        <div class="row">
+          <div class="columns small-12" style="height:3em;">
+          </div>
+        </div>
+        {% if news %}
+        {% for each in news %}
+        <div class="row" style="margin-top:0.5em;padding-left:0.6em;padding-right:0.6em;">
+          <div class="columns large-3">
+            <div class="row" style="margin-top:3em;">
+              <div class="columns large-6" style="padding:0px;">
+                <a href='/deletenews/{{each.id}}' class="button alert manageNewsButton" style="">
+                حذف
+                </a>
+              </div>
+              <div class="columns large-6" style="padding:0px;">
+                <a href='/editnews/{{each.id}}' class="button active manageNewsButton" >
+                ویرایش
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="columns large-9">
+            <h6 class="newsHeader" dir="rtl">
+            {{each.title}}
+            </h6>
+            <p class="newsDate" dir="rtl">
+            {{each.time}}
+            </p>
+            <p class="newsText" dir="rtl">
+            {{each.content}}
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="columns small-12 newsLine" style="">
+          </div>
+        </div>
+        {% endfor %}
+      {% endif %}
+      </div>
+    </div>
+
+  </body>
+
+
+</html>
+

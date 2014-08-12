@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>وبلاگ رسمی دکتر محمود دهقان طزرجانی</title>
+		
+		<link rel="stylesheet" type="text/css" href="static/css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="static/css/foundation.min.css" />	
+		<link rel="stylesheet" type="text/css" href="static/css/home.css" />
+
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<script type='text/javascript' src="static/js/jquery.min.js"></script>
+		<script type='text/javascript' src="static/js/home.js"></script>
+		<script type='text/javascript' src="static/js/jquery.hoverIntent.min.js"></script>
+
+
+	</head>
+
+	<body id="bdy" >
+		<div class"row">
+			<div class="columns large-10 large-offset-1">
+				<div class="row" style="margin-top:5em;">
+					<div class="columns 12">
+						<h1 id="mainHeader">
+						وبلاگ رسمی دکتر محمود دهقان طزرجانی
+						</h1>
+					</div>
+				</div>
+				<div class="row">
+					<div class="columns large-12" style="margin-top:8em;">
+						
+					</div>
+				</div>
+			    {%if news %}
+		      	{% for each in news %}
+				<div class="row" style="">
+					<div class="columns large-10 large-offset-1">
+						<h4 class="newsHeader">
+							{{each.title}}
+						</h4>
+						<p class="newsDate" dir="rtl">{{each.date}}<br/>{{each.time}}</p>
+						<p class="newsText" dir="rtl">
+							{{each.content}}
+						</p>
+					</div>
+				</div>
+		      	{% endfor %}
+		    	{% endif %}				
+			</div>
+		</div>
+
+	</body>
+
+
+</html>
+

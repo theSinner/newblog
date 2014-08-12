@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>مدیریت اخبار</title>
+    
+    <link rel="stylesheet" type="text/css" href="/static/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/foundation.min.css" /> 
+    <link rel="stylesheet" type="text/css" href="/static/css/panel.css" />
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <script type='text/javascript' src="/static/js/jquery.min.js"></script>
+    <script type='text/javascript' src="/static/js/foundation.min.js"></script>
+    <script type='text/javascript' src="/static/js/foundation/foundation.reveal.js"></script>
+    <script type='text/javascript' src="/static/js/angular.min.js"></script>
+    <script type='text/javascript' src="/static/js/controller.js"></script>
+    <script type='text/javascript' src="/static/js/panel.js"></script>
+
+
+  </head>
+  <body> 
+    <nav class="top-bar" data-topbar>
+
+      <section class="top-bar-section">     
+          <ul class="right">
+              <li>
+                <p style="height:45px;top:0px;margin:0px;font-family:bmitra;font-size:1.3em;padding-left:20px;padding-right:20px;padding-top:0.5em;color:#ffffff;">اضافه کردن خبر</a>
+              </li>
+          </ul>
+      </section>
+    </nav>
+  	<div class="row">
+  		<div class="columns small-10 small-offset-1 end">
+  		 	{{ state }}
+  			
+  			<form method="post" name="edit_news" action="">
+  			{% csrf_token %}
+
+	        <div class="row" style="margin-top:2em;">
+	          	<div class="columns small-9 small-offset-1">
+	            	<input type="text" name="form_title" value="{{edit_title}}">
+	        	</div>
+	         	<div class="columns small-2 end">
+	            	<p style="font-size:1.3em;font-family:bmitra;text-align:left;margin-top:0.1em;" dir="rtl">
+	            	عنوان
+	        		</p>
+	        	</div>
+	        </div>
+	        <div class="row" style="margin-top:2em;">
+	          	<div class="columns small-9 small-offset-1">
+					<textarea rows="10" name="form_content" style="background-color:#ffffff;color:#000000;width:100%;font-size:1.3em;font-family:bmitra;resize:none;overflow:auto;" dir="rtl" >{{edit_content}}</textarea>
+	        	</div>
+	         	<div class="columns small-2 end">
+	            	<p style="font-size:1.3em;font-family:bmitra;text-align:left;margin-top:0.1em;" dir="rtl">
+	            	متن
+	        		</p>
+	        	</div>
+	        </div>
+	        <div class="row" style="margin-top:2em;">
+	          	<div class="columns small-9 small-offset-1">
+  					<input type="submit" value="ثبت خبر" class="button" style="font-family:bmitra;font-size:1.2em;">
+  				</div>
+  			</div>
+  			</form>
+  		</div>
+  	</div>
+
+  
+
+      
+  </body>
+
+</html>
