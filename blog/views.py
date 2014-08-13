@@ -41,7 +41,7 @@ def cpanel(request):
         counter=0;
         from_zone = tz.gettz('UTC')
         to_zone = tz.gettz('Asia/Tehran')
-        print to_zone
+        #print to_zone
         for a in Blog.objects.all().order_by('-time'):
             articles.append({})
             utc = a.time.replace(tzinfo=from_zone)
@@ -64,13 +64,13 @@ def blog(request):
     counter=0;
     from_zone = tz.gettz('UTC')
     to_zone = tz.gettz('Asia/Tehran')
-    print to_zone
+    #print to_zone
     for a in Blog.objects.all().order_by('-time'):
         articles.append({})
-        print a.time
+        #print a.time
         utc = a.time.replace(tzinfo=from_zone)
         lcl = utc.astimezone(to_zone)
-        print lcl
+        #print lcl
         jalali_now = khayyam.JalaliDatetime.from_datetime(lcl)
         articles[counter]['time']=jalali_now.strftime("%C")
         articles[counter]['title']=a.title
@@ -109,8 +109,8 @@ def add_news(request):
                 maybe_title = request.POST.get('add_title')
                 maybe_content = request.POST.get('add_content')
             else:
-                print 'time'
-                print datetime.datetime.now()
+                #print 'time'
+                #print datetime.datetime.now()
                 p = Blog(title=add_title,content = add_content,time=datetime.datetime.now())
                 p.save()
                 return redirect('/cpanel/')
