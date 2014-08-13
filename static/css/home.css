@@ -95,7 +95,7 @@ p
   text-align: right; 
   margin-bottom: 4em; 
 }
-#footer
+#footer.abs
 {
   position: absolute;
   bottom:0px;
