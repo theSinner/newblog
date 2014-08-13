@@ -5,8 +5,8 @@ from django.utils import timezone
 import datetime
 class Blog(models.Model):
     
-    title = models.CharField(max_length=200)
-    content = models.CharField(max_length=2000)
+    title = models.CharField(max_length=300)
+    content = models.CharField(max_length=4000)
     date = models.DateField( default = date.today)
     time = models.DateTimeField( default = datetime.datetime.now(),null=True)
 

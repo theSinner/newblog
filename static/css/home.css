@@ -44,6 +44,7 @@
 body
 {
   background-color: #ffffff;
+  /*background:url("../image/bg.png");*/
 }
 .line
 {
@@ -65,6 +66,25 @@ body
   text-align: center;
   color:#000F55;
   font-size:3em;
+}
+#siteLink
+{
+  text-align: center;
+}
+#siteLink a
+{
+  font-family: bmitra;
+  
+  color:#000F55;
+  font-size:1.5em;
+}
+#siteLink a:hover
+{
+  color:#831606;
+  -webkit-transition: color 0.4s ease;
+  -moz-transition: color 0.4s ease;
+  -o-transition: color 0.4s ease;
+  transition: color 0.4s ease;
 }
 p
 {
